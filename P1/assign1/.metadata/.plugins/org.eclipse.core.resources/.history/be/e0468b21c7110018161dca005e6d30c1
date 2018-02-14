@@ -8,7 +8,7 @@ public class Client {
 	public static void main(String[] args) {
 		// -c -h <server hostname> -p <server port> -t <time>
 		String hostname = args[0];
-		int portNumber = Integer.parseInt(args[1]);
+		int portNumber = 0;
 		long time = 0;
 		byte blocks[] = new byte[1000];
 			
