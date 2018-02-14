@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;port&apos; in &apos;Client.main(...)&apos; to &apos;portNumber&apos;&#x0A;- Original project: &apos;Iperfer&apos;&#x0A;- Original element: &apos;Client.main(String[]).port&apos;&#x0A;- Renamed element: &apos;port&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;port&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Client.java[Client~main~\[QString;@port!172!184!176!179!I!0!false" name="portNumber" references="true" stamp="1518638789737" version="1.0"/>
+</session>
