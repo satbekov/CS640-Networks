@@ -40,8 +40,8 @@ public class TestIperfer {
 
     private static void handleArguments(String[] cargs, boolean isServer, boolean isClient) throws IOException {
         long time = 0;
-        int port = 0;
-        String host = "";
+        int portNumber = 0;
+        String hostName = "";
 
         for(int count = 0; count < cargs.length && cargs[count].startsWith("-"); count++) {
             String arg = cargs[count];
@@ -50,8 +50,8 @@ public class TestIperfer {
             else {
                 switch (arg) {
                     case "p":
-                        port = Integer.parseInt(cargs[count++]);
-                        if (port <= 1024 || port >= 65535) {
+                        portNumber = Integer.parseInt(cargs[count++]);
+                        if (portNumber <= 1024 || portNumber >= 65535) {
                             printPortError();
                         }
                         break;
@@ -59,7 +59,7 @@ public class TestIperfer {
                         if(!isClient) {
                             printError();
                         } else {
-                            host = cargs[count++];
+                            hostName = cargs[count++];
                         }
                         break;
                     case "t":
@@ -76,7 +76,7 @@ public class TestIperfer {
         }
 
         if(isServer) {
-            Server server = new Server(port);
+            Server server = new Server(portNumber);
             try {
                 server.establishConnection();
             } catch (IOException e) {
@@ -85,7 +85,8 @@ public class TestIperfer {
         }
 
         if(isClient) {
-
+            Client client = new Client(hostName, portNumber, time);
+            client.requestServer();
         }
     }
 

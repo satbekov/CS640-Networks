@@ -16,7 +16,7 @@ public class Server {
         time = time / 1000;
         data = data / 1000;
         double trafficRate = (data * 8) / (time * 1000);
-        System.out.println("received=" + data + "KB rate=" + String.format("%.3f", trafficRate) + " Mbps");
+        System.out.println("received=" + data + " KB rate=" + String.format("%.3f", trafficRate) + " Mbps");
     }
 
     public void establishConnection() throws IOException {
@@ -32,6 +32,7 @@ public class Server {
             while ((bytesRead = inStream.read(streamData)) != -1) {
                 data = data + bytesRead;
             }
+
             printSummary(time, data);
             serverSocket.close();
             clientSocket.close();
